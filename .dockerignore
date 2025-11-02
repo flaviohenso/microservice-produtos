@@ -1,0 +1,34 @@
+# Ignora arquivos e diretórios desnecessários para o build Docker
+
+# Diretório de build do Maven
+target/
+.mvn/
+
+# Arquivos do IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Documentação (opcional - remover se quiser incluir)
+*.md
+!README.md
+
+# Arquivos temporários
+*.log
+*.tmp
+

@@ -1,0 +1,23 @@
+services:
+  microservice-produtos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: microservice-produtos
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=default
+    # Healthcheck para verificar se a aplicação está rodando
+    # Nota: A imagem Alpine precisa ter wget instalado ou podemos usar outra abordagem
+    # Por ora, removido - você pode adicionar Spring Actuator para healthcheck mais robusto
+    # Restart automático em caso de falha
+    restart: unless-stopped
+    networks:
+      - produtos-network
+
+networks:
+  produtos-network:
+    driver: bridge
+
